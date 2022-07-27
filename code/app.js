@@ -130,14 +130,11 @@ async function loadMovies(url, obj){
 function showMovies(moviesToShow, section){
     console.log(moviesToShow);
     moviesToShow.forEach(movie =>{
-        const {poster_path, title}=movie;
+        // const {poster_path, title}=movie;
         const cardMovie=document.createElement('div');
         cardMovie.classList.add('col', 'mb-3');
         cardMovie.innerHTML=`
-        <div class="movie text-white">
-            <img id="img-movie" src="https://image.tmdb.org/t/p/w500/${poster_path}" class="img-fluid" alt="">
-            <p class="title">${title}</p>
-        </div>
+        <a href="#modal${movie.id}" data-bs-toggle="modal" data-bs-target="#modal${movie.id}"><img id="img-movie" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="img-fluid" alt=""></a>
         `;
         section.appendChild(cardMovie);
     });
@@ -151,4 +148,5 @@ function showMovies(moviesToShow, section){
 
 
 loadMovies(`${BASE_URL}movie/now_playing?${API_KEY}&${BASE_LAG}&page=1&region=MX`, newMovies);
+console.log(newMovies);
 showMovies(newMovies, boxMovies);
