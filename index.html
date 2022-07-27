@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MovieBook</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <body>
+    <header class="bg-bank bg-black pt-0 fs-6">
+        <div class="container container-fluid">
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+                        <div class="container-fluid">
+                            <a class="navbar-brand fs-3" href="./index.html">
+                                <img id="imgLogo" src="./logo.png" alt="" width="38" height="38" class="d-inline-block align-text-top bg-white rounded">
+                                MovieBook
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Novedades</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            Iniciar sesion
+                                            <i class="bi bi-person-circle"></i>
+                                            
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="bg-black fs-6 text-white-50 py-4">
+        <div id="main-container" class="container">
+
+            <h5>Estrenos recientes</h5>
+            <div id="box-movies-latest" class="boxMovies row row-cols-6">
+                <!-- <div class="card bg-secondary flex-row col-2">
+                    <img src="${image}" class="img-fluid" alt="">
+                    <div class="card-img-bottom w-50">
+                        <h2 class="card-title">${nombre}</h2>
+                    </div>
+                </div> -->
+            </div>
+            <h5>Acción</h3>
+            <div id="box-movies-accion" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Aventura</h3>
+            <div id="box-movies-aventura" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Animación</h3>
+            <div id="box-movies-animacion" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Comedia</h3>
+            <div id="box-movies-comedia" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Crimen</h3>
+            <div id="box-movies-crimen" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Documental</h3>
+            <div id="box-movies-documental" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Drama</h3>
+            <div id="box-movies-drama" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Familia</h3>
+            <div id="box-movies-familia" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Fantasia</h3>
+            <div id="box-movies-fantasia" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Historia</h3>
+            <div id="box-movies-historia" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Terror</h3>
+            <div id="box-movies-terror" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Música</h3>
+            <div id="box-movies-musica" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Misterio</h3>
+            <div id="box-movies-misterio" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Romance</h3>
+            <div id="box-movies-romance" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Ciencia ficción</h3>
+            <div id="box-movies-cf" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Película de TV</h3>
+            <div id="box-movies-tv" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Suspense</h3>
+            <div id="box-movies-suspense" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Bélica</h3>
+            <div id="box-movies-belica" class="boxMovies row row-cols-6">
+
+            </div>
+            <h5>Western</h3>
+            <div id="box-movies-western" class="boxMovies row row-cols-6">
+
+            </div>
+
+        </div>
+    </main>
+    <script src="./code/app.js"></script>
+    <script src="./code/movies.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+#imgLogo{
+    filter: invert(100%);
+}
+
+#main-container > .row{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey; 
+    border-radius: 10px;
+}
+   
+::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: whitesmoke; 
+}
+
+#main-container > .row > .col{
+    display: inline-block;
+}
+
+
+.boxMovies{
+    text-align: center;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+
+.boxMovies #img-movie{
+    width: 100%;
+	margin-bottom: 10px;
+	border-radius: 15px;
+}
