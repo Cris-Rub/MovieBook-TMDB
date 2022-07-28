@@ -1,46 +1,46 @@
-// class Movies{
-//     constructor() {
-//       this.queue = []
-//     }
+class Movies{
+    constructor() {
+      this.queue = []
+    }
   
-//     enqueue (element) {
-//       this.queue.push(element)
-//       return this.queue
-//     }
+    enqueue (element) {
+      this.queue.push(element)
+      return this.queue
+    }
   
-//     dequeue () {
-//       return this.queue.shift()
-//     }
+    dequeue () {
+      return this.queue.shift()
+    }
   
-//     peek (){
-//       return this.queue[0]
-//     }
+    peek (){
+      return this.queue[0]
+    }
   
-//     front(){
-//       return this.queue[0]
-//     }
+    front(){
+      return this.queue[0]
+    }
   
-//     back(){
-//       return this.queue[this.queue.length - 1]
-//     }
+    back(){
+      return this.queue[this.queue.length - 1]
+    }
   
-//     size(){
-//       return this.queue.length
-//     }
+    size(){
+      return this.queue.length
+    }
   
-//     print(){
-//       console.log(this.queue)
-//     }
+    print(){
+      console.log(this.queue)
+    }
   
-//     isEmpty(){
-//       return this.queue.length === 0
-//     }
+    isEmpty(){
+      return this.queue.length === 0
+    }
   
-//     clear(){
-//       this.queue = []
-//     }
+    clear(){
+      this.queue = []
+    }
   
-//   }
+  }
   
 //   let queue = new Movies()
   

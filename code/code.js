@@ -28,6 +28,40 @@ const boxMovies_western=document.querySelector('#box-movies-western');
 //constante main
 const boxMain=document.querySelector('#main');
 
+//constantes buscar pelicula
+const formSearch=document.querySelector('#form-searchMovie');
+const inputMovie=document.querySelector('#inputMovie');
+
+//Buscar pelicula
+formSearch.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const searchValue=inputMovie.value;
+    if(searchValue!==''){
+        try{
+            
+        }catch(error){
+
+        }    
+    }else{
+        alert('Ingresa un valor.', 'warning');
+    }
+    
+})
+
+//Mostrar error en pantalla
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+const alert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div> <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg> ${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+}
+
 //Cargar y mostrar peliculas
 async function loadMovies(url, section){
     try{
@@ -51,7 +85,7 @@ async function loadMovies(url, section){
             const cardMovieInfo=document.createElement('div');
             cardMovieInfo.innerHTML=`
             <div class="modal fade" id="modal${movie.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
                 <div class="modal-content text-black">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">${movie.title}</h5>

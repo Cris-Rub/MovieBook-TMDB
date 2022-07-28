@@ -10,6 +10,7 @@
 
 ::-webkit-scrollbar {
     width: 5px;
+    background: black;
 }
   
 ::-webkit-scrollbar-track {
@@ -18,22 +19,31 @@
 }
    
 ::-webkit-scrollbar-thumb {
+    background: gray; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: white; 
+}
+
+#main-container > ::-webkit-scrollbar-thumb{
     background: white; 
     border-radius: 10px;
 }
-  
-::-webkit-scrollbar-thumb:hover {
-    background: whitesmoke; 
+
+#main-container > ::-webkit-scrollbar-thumb:hover {
+    background: gray; 
 }
 
 #main-container > .row > .col{
     display: inline-block;
 }
 
-
 .boxMovies{
     grid-template-columns: repeat(6, minmax(100px, 1fr));
 }
+
 
 .boxMovies #img-movie{
     width: 100%;
