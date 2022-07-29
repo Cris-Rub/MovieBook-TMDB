@@ -124,18 +124,21 @@ formSearch.addEventListener('submit', async (e)=>{
 })
 
 //Cargar cast
-// async function loadCredits(id){
-//     let actores=[];
+// async function loadCredits(id, actores){
+//     let count=0;
 //     try{
 //         const response=await fetch(`${BASE_URL}movie/${id}/credits?${API_KEY}&${BASE_LAG}`);
 //         const data=await response.json();
 //         data.cast.forEach(actor=>{
-//             actores.push(actor.name);
+//             let names={};
+//             names['actor']=actor.name;
+//             actores.push(names);
+//             count++;
 //         })
 //     }catch(error){
 //         console.log(error);
 //     }
-//     return actores;
+//     return actores; //Array de obj
 // }
 
 //Cargar peliculas
@@ -146,6 +149,8 @@ async function loadMovies(url, obj){
         let count=0;
         data.results.every(movies =>{
             let movie={};
+            let actores=[];
+            
             if(count>14){
                 return false;
             }
@@ -154,6 +159,11 @@ async function loadMovies(url, obj){
             movie['poster_path']=movies.poster_path;
             movie['release_date']=movies.release_date;
             movie['vote_average']=movies.vote_average;
+            // await loadCredits(movies.id, actores);
+            // console.log(actores)
+            // movie['cast']=actores.forEach((actor)=>{
+            //     return  actor.actor;
+            // })
             if(movies.overview==''){
                 movie['overview']="Sin descripción disponible.";
             }
@@ -187,45 +197,51 @@ async function showMovies(url, section){
         cardMovieInfo.innerHTML = `
             <div class="modal fade " id="modal${movie.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content text-black">
+                <div class="modal-content text-white bg-black">
                   <div class="modal-header">
-                    <h5 class="modal-title text-center" id="exampleModalLabel">${movie.title}</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">${movie.title}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-                    <div class="row">
-                        <div class="col-4">
-                            <img id="img-movie" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="img-card img-fluid" alt="">   
-                        </div>
-                        <div class="col-8">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5>Resumen</h5>
-                                    <p>${movie.overview}</p>
+
+                  <div class="container">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-4 align-self-center">
+                                <img id="img-movie" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="img-card img-fluid" alt="">   
+                            </div>
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5>Resumen</h5>
+                                        <p>${movie.overview}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5>Actores</h5>
+                                        <p>${movie.cast}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5>Puntuación promedio</h5>
+                                        <p>${movie.vote_average}/10</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5>Fecha de estreno</h5>
+                                        <p>${movie.release_date}</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5>Actores</h5>
-                                    <p>${movie.cast}</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5>Puntuación promedio</h5>
-                                    <p>${movie.vote_average}/10</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5>Fecha de estreno</h5>
-                                    <p>${movie.release_date}</p>
-                                </div>
-                            </div>
-                        </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>            
+
                   </div>
+
+
                 </div>
               </div>
             </div>

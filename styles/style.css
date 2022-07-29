@@ -28,12 +28,12 @@
 }
 
 #main-container > ::-webkit-scrollbar-thumb{
-    background: white; 
+    background: gray; 
     border-radius: 10px;
 }
 
 #main-container > ::-webkit-scrollbar-thumb:hover {
-    background: gray; 
+    background: white; 
 }
 
 #main-container > .row > .col{
@@ -49,4 +49,8 @@
     width: 100%;
 	margin-bottom: 10px;
 	border-radius: 15px;
+}
+
+.modal.header{
+    text-align: center;
 }
